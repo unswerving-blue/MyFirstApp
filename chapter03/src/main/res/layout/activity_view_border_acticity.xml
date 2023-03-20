@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#16a085"
+        android:text="视图宽度采用wrap_content定义"
+        android:textColor="#2ecc71"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#16a085"
+        android:text="视图宽度采用match_parent定义"
+        android:textColor="#2ecc71"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#16a085"
+        android:text="视图宽度采用固定大小"
+        android:textColor="#2ecc71"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#c0392b"
+        android:text="通过代码指定视图宽度"
+        android:textColor="#f39c12"
+        android:textSize="17sp" />
+</LinearLayout>

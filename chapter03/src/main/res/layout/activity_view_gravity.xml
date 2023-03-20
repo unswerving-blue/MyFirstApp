@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff7a45"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <!--第一个子布局背景为黄色，在上级视图中朝下对齐,他的下级视图则靠左对齐-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="#fa8c16"
+        android:gravity="left"
+        android:padding="20dp">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#fffb8f" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:background="#fa8c16"
+        android:layout_marginLeft="5dp"
+        android:padding="20dp"
+        android:gravity="right">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#fffb8f" />
+    </LinearLayout>
+</LinearLayout>
