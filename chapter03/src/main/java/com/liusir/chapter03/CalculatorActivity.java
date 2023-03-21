@@ -9,15 +9,15 @@ import android.widget.TextView;
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tv_result;
-    //    第一个操作数
+    //      第一个操作数
     private String firstNum = "";
-    //第二个操作数
+    //      第二个操作数
     private String secondNum = "";
-    //运算符
+    //      运算符
     private String operator = "";
-    //当前计算的结果
+    //      当前计算的结果
     private String result = "";
-    //显示文本内容
+    //      显示文本内容
     private String showText = "";
 
     @Override
@@ -35,6 +35,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.btn_eight).setOnClickListener(this);
         findViewById(R.id.btn_nine).setOnClickListener(this);
         findViewById(R.id.btn_add).setOnClickListener(this);
+        findViewById(R.id.btn_four).setOnClickListener(this);
         findViewById(R.id.btn_five).setOnClickListener(this);
         findViewById(R.id.btn_six).setOnClickListener(this);
         findViewById(R.id.btn_minus).setOnClickListener(this);
@@ -63,23 +64,36 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
 //            点击清楚按钮
             case R.id.btn_clear:
+                clear();
                 break;
-//                点击了取消按钮
+//            点击了取消按钮
             case R.id.btn_cancel:
-//              点击了加减乘除
+//             点击了加减乘除
             case R.id.btn_add:
             case R.id.btn_minus:
             case R.id.btn_mutiply:
             case R.id.btn_divide:
+                operator = inputText;
+                refreshText(showText+inputText);
                 break;
 //             点击了等号按钮
             case R.id.btn_equals:
+                refreshText(showText + inputText);
+                Double calculateResult = calculateFour();
+                refreshOperator(String.valueOf(calculateResult));
+                refreshText(showText + calculateResult);
                 break;
 //          点击了根号按钮
             case R.id.ib_sqrt:
+                double sqrt_result = Math.sqrt(Double.parseDouble(firstNum));
+                refreshOperator(String.valueOf(sqrt_result));
+                refreshText(showText + "√=" + sqrt_result);
                 break;
 //                获取分数
             case R.id.btn_reciprocal:
+                double reciprocal_result = 1.0 / Double.parseDouble(firstNum);
+                refreshOperator(String.valueOf(reciprocal_result));
+                refreshText(showText+"/");
                 break;
 //               点击了点按钮
             case R.id.btn_point:
@@ -96,6 +110,9 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 }
 
             default:
+                if (operator == "" && result.length() > 0) {
+                    clear();
+                }
 //                点击数字键
 //                给FirstNum， secondNum赋值
                 if (operator.equals("")) {
@@ -103,11 +120,9 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 }else {
 //                  有运算符，则继续拼接第二个操作数
                     secondNum += inputText;
-
                 }
 //                if (showText.equals("0")&&!inputText.equals(".")) {
 //                规范化整数   不需要0在前边
-
                 if (showText.equals("0")&&!inputText.equals(".")) {
                     refreshText(inputText);
                 }else{
@@ -122,6 +137,38 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
+
+//    四则运算
+    private Double calculateFour() {
+        switch (operator) {
+            case "+":
+                return Double.parseDouble(firstNum) + Double.parseDouble(secondNum);
+
+            case "-":
+                return Double.parseDouble(firstNum) - Double.parseDouble(secondNum);
+
+            case "*":
+                return Double.parseDouble(firstNum) * Double.parseDouble(secondNum);
+
+            default:
+                return Double.parseDouble(firstNum) / Double.parseDouble(secondNum);
+        }
+    }
+
+    /*点击了清楚按钮*/
+    private void clear() {
+        refreshText("");
+        refreshOperator("");
+    }
+
+    //刷新运算结果
+    private void refreshOperator(String new_result) {
+        result = new_result;
+        firstNum = result;
+        secondNum = "";
+        operator = "";
+    }
+
 
     /*刷新文本显示*/
     private void refreshText(String text) {
