@@ -1,13 +1,17 @@
 package com.liusir.chapter04;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class ActStartActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+    private static final String TAG = "LiuSir";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,4 +26,41 @@ public class ActStartActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(this, ActFinishActivity.class));
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
+    }
+
 }
