@@ -21,7 +21,6 @@ public class ActSendActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_act_send);
         tv_msg = (TextView) findViewById(R.id.tv_msg);
         findViewById(R.id.btn_send).setOnClickListener(this);
-
     }
 
     @Override
