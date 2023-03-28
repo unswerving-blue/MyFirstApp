@@ -58,7 +58,6 @@ public class ActRequestActivity extends AppCompatActivity implements View.OnClic
         bundle.putString("request_time", DateUtils.getNowTime());
         bundle.putString("request_content", mRequest);
         intent.putExtras(bundle);
-
         register.launch(intent);
     }
 }

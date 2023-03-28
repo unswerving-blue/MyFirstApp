@@ -10,22 +10,13 @@
         <activity
             android:name=".ReadStringActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            <!--在Activity内部提供元数据（metadata）-->
             <meta-data android:name="weather" android:value="晴天" />
         </activity>
         <activity
             android:name=".ActRequestActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ActResponseActivity"
@@ -56,7 +47,13 @@
             android:exported="false" />
         <activity
             android:name=".ActStartActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
+        </activity>
     </application>
 
 </manifest>
