@@ -29,7 +29,6 @@ public class DrawableShapeActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.btn_oval:
                 vContent.setBackgroundResource(R.drawable.shape_oval_rose);
-
                 break;
         }
     }
