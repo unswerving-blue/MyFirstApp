@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--这是用到了Drawable的一个子类StateListDrawable（状态列表图形）-->
+    <!--关键点是state_pressed属性，该属性表示按下状态，值为true表示按下时显示-->
+    <item android:state_pressed ="true" android:drawable="@drawable/rectangle_pressed9" />
+    <item android:drawable="@drawable/rectangle_normal9"/>
+</selector>
