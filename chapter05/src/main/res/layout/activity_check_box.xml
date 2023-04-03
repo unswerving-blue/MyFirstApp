@@ -12,12 +12,15 @@
         android:text="这是系统的CheckBox"
         />
 
+    <!--引入外部资源drawable中的seletor-->
     <CheckBox
         android:id="@+id/ck_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        style="@style/MyCheckBox"
+        android:button="@drawable/checkbox_selector"
         android:padding="5dp"
         android:text="这个是自定义checkBox" />
+
+
 </LinearLayout>

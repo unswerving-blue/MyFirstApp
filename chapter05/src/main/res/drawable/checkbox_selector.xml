@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <item android:drawable="@drawable/checkbox_laylist_unchoose" />-->
-
-<!--    <item android:drawable="@drawable/checkbox_laylist_choose" android:state_checked="true" />-->
-    <item android:drawable="@drawable/checkbox_unchoose" android:state_checked="false"/>
-    <item android:drawable="@drawable/checkbox_choose" android:state_checked="true" />
+    <!-- 未选中状态-->
+    <item android:state_checked="false">
+        <!--使用layer-list 调整图片大小-->
+        <layer-list>
+            <item android:drawable="@drawable/checkbox_unchoose" android:width="35dp" android:height="35dp"/>
+        </layer-list>
+    </item>
+    <!--选中状态-->
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:drawable="@drawable/checkbox_choose" android:width="35dp" android:height="35dp"/>
+        </layer-list>
+    </item>
 </selector>
