@@ -17,11 +17,11 @@ public class switch_acitvity extends AppCompatActivity implements CompoundButton
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_switch_acitvity);
 //        原生switch
-        Switch swichOriginal = (Switch) findViewById(R.id.sw_status);
-        swichOriginal.setOnCheckedChangeListener(this);
+        ((Switch) findViewById(R.id.sw_status)).setOnCheckedChangeListener(this);
 //        自定义swich
         CheckBox switchSelf = (CheckBox) findViewById(R.id.cb_status);
         switchSelf.setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.cb_status)).setOnCheckedChangeListener(this);
         tvResult = (TextView) findViewById(R.id.tv_result);
     }
 
