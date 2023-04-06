@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etAccount"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="18sp" />
+
+    <!--设置默认边框-->
+    <EditText
+        android:id="@+id/etAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etPassword"
+        android:hint="请输入用户名"
+        android:inputType="text" />
+
+    <!--设置无边框-->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:hint="请输入密码"
+        android:inputType="textPassword" />
+
+
+    <!--设置圆角边框的Edit-->
+    <EditText
+        android:id="@+id/etSelf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_selector"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="设置圆角边框"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/editext_selector"
+        android:hint="我的边框是圆角"
+        android:inputType="text" />
+</RelativeLayout>
