@@ -11,4 +11,5 @@ public class EditBorderAcitivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_border_acitivity);
     }
+
 }
